@@ -1,3 +1,5 @@
+# category - Recursion
+# decision, choices, constraints
 class Solution:
     def generateParenthesis(self, n):
         lst = []

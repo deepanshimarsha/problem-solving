@@ -1,4 +1,5 @@
 # in-degree approach
+# time complexity - O(P + D)
 class Node:
     def __init__(self, val):
         self.val = val

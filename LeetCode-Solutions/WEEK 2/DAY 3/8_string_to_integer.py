@@ -1,5 +1,5 @@
-#category - DS, String
-#logic - ASCII code
+# category - DS, String
+# logic - ASCII code
 class Solution:
     def myAtoi(self, s: str) -> int:
         s = s.strip()
