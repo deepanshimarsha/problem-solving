@@ -1,35 +1,24 @@
 class Solution:
-    def search(self, nums: List[int], target: int) -> int:
-        start = 0
-        end = len(nums) - 1
-        mid = (start + end) // 2
+    def search(self, nums, target):
+        n = len(nums)
+        start, end = 0, n-1
 
-        if nums[mid] == target:
-            return mid
+        while start < end:
+            mid = (start + end) // 2
 
-        while mid > 0 and mid < len(nums) - 1 and nums[mid] < nums[mid + 1]:
-            if nums[mid] > nums[start]:
-                mid = mid + 1
-            elif nums[mid] < nums[start]:
-                mid = mid - 1
-
-        while start <= end:
-            if nums[mid] == target:
-                return mid
-
-            elif target > nums[mid]:
-                if target > nums[end]:
-                    end = mid - 1
+            if nums[start] < nums[mid]:
+                if nums[start] <= target <= nums[mid]:
+                    end = mid
                 else:
                     start = mid + 1
             else:
-                if target < nums[start]:
+                if nums[mid+1] <= target <= nums[end]:
                     start = mid + 1
                 else:
-                    end = mid - 1
+                    end = mid
 
-            mid = (start + end) // 2
-
+        if nums[start] == target:
+            return start
         return -1
 
 
