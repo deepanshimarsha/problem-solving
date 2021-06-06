@@ -8,6 +8,7 @@ class Solution:
         return lst
 
     def backtrack(self, s, left, right, lst):
+
         if left < 0 or right < left:
             return
         if left == 0 and right == 0:
